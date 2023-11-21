@@ -1,0 +1,35 @@
+
+ CREATE TABLE DEPT(dno int primary key,dname varchar(20),location varchar(20));
+
+ ALTER TABLE Employee ADD (dno int references Dept(dno));
+
+INSERT INTO DEPT Values(10,'Development','Banglore');
+INSERT INTO DEPT Values(20,'Testing','Chennai');
+INSERT INTO DEPT Values(30,'Operation','Mumbai');
+INSERT INTO DEPT Values(40,'Marketing','Hyderabad');
+INSERT INTO DEPT Values(50,'Sales','Indore');
+
+
+PRIMARY KEY:
+
+PK = NotNull + Unique
+
+FK = null values and duplicate values ,
+     and all the values in F.K should match with the P.K Column values
+
+
+mysql> update employee set dno = 10 where eid IN (101,102,104,105);
+Query OK, 4 rows affected (0.01 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> update employee set dno = 20 where eid IN (103,106,107);
+Query OK, 3 rows affected (0.01 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> update employee set dno = 30 where eid = 101;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee set dno = 40 where eid = 108;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0

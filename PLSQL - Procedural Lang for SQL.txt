@@ -1,0 +1,57 @@
+PL/SQL - Procedural Lang for SQL
+
+Stored Procedure:
+-----------------
+Procedure
+Function
+Triggers
+
+Procedure:
+----------
+Procedure is just like function , but it does not return any value. It can be created by using create command , and get stored in database permanent.
+It will accept input parameter to pass data to the procedure statements.
+
+Parameters: IN , OUT , INOUT
+
+syn:
+
+CREATE Procedure  procedure_name(parameters...)
+BEGIN
+
+// any sql statements...
+// control statement
+// loops
+
+END;
+
+
+Example1:
+
+DELIMITER  $$
+
+
+CREATE OR REPLACE PROCEDURE  EMP_PRO(IN  id  int,OUT  result decimal(10,2))
+
+BEGIN
+
+	
+
+	SELECT sum(salary) into result  from employee;
+
+
+END$$
+
+
+CALL  EMP_PRO(101);
+
+
+
+
+
+
+
+ 
+
+
+
+

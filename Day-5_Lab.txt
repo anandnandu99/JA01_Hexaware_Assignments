@@ -1,0 +1,35 @@
+Day-5  
+-----
+Practice JDBC Crud Operation  with PreparedStatement using anyone entity class/pojo class.
+Atleast INSERT and SELECT ALL
+
+SOLID Principles:
+-----------------
+
+Learn Design Patterns:
+----------------------
+Creational Patterns
+ 1.Abstract Factory
+ 2. Factory Method
+ 3. Singleton
+4. Builder
+
+Structural Patterns
+1. Adapter 
+2. Composite 
+
+Behavioral Patterns
+1.Iterator
+2. Strategy 
+3. Observe
+
+
+
+
+Collection  order = new ArrayList();
+List list = new ArrayList();
+
+		collection.add("pen");
+		collection.addAll(map);
+	
+

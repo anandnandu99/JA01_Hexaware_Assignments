@@ -1,0 +1,88 @@
+Joins:
+
+We can use joins concepts when ever we want to fetch data from  multiple tables , which has common columns (column data type and values should be same) 
+
+Note: Most of the cases PK and FK will be consider  as common column but not mandatory.
+
+Equi Join:
+
+select  eid,ename,salary , d.dno , dname ,location  from employee e , dept  d  where e.dno = d.dno;
+
+Non-Equi Join: 
+
+select  eid,ename,salary , d.dno , dname ,location  from employee e , dept  d  where e.dno != d.dno;
+
+Cross Join: 
+
+select  eid,ename,salary , d.dno , dname ,location  from employee e   CROSS JOIN   dept  d  
+ where e.dno = d.dno;
+
+Natural Join:
+mysql> select  eid,ename,salary , dno , dname , location from employee NATURAL JOIN Dept;
+
+
+
+
+Outer Join:
+It is used to join tables  to fetch matching records along with non-matching.
+
+Note: Outer joins used ON clause ,  because where clause not allowed
+
+Left outer Join:
+select eid,ename,job , d.dno , dname from  employee e  left outer join dept  d on e.dno = d.dno;
+
+Right outer join:
+ select   d.dno , dname ,location , eid, ename, job from  employee e   right outer join  dept d ON e.dno = d.dno;
+
+
+Full Outer Join:
+
+ select eid,ename,job , d.dno , dname from  employee e  left outer join dept  d ON e.dno = d.dno
+ -> UNION
+ -> select eid,ename,job , d.dno , dname from  employee e  right outer join dept  d ON e.dno = d.dno;
+
+
+SELF Join:
+-----------
+When we join table by itself.
+
+mysql> Select E.eid,E.ename ,M.eid , M.ename   from employee E , employee M   where E.mid = M.eid;
+
+ Select E.eid,E.ename ,M.eid , M.ename , M.mid   from employee E , employee M   where E.mid = M.eid;
+
+
+
+
+
+SUB-QUERIES/Nested Queries:
+===========================
+A query inside another query, nested queries known as sub-queries.
+
+
+1.Get details for those employees , who are earning more than Tom.
+
+> select * from employee where salary > (select salary  from employee where ename = 'tom');
+
+2. Get employee details , who ar working at Banglore location
+
+ > select * from employee where dno = (select dno from dept where location = 'Banglore');
+
+Sub query in Project
+----------------------:
+ select job, salary , (select sum(salary) from employee) - salary   from employee;
+
+Sub query instead of table name
+--------------------------------
+select  eid,ename,salary,job from  (select eid,ename,salary,job from employee where job IN ('Developer','Tester'))  emp;
+
+
+Views:
+------
+View is a virtual copy of our physical table , it consist of select queries.
+It is just like a copy of our tables.
+
+CREATE VIEW Employee_Info AS select * from employee;
+
+CREATE VIEW dept_view AS select dno,dname from dept;
+
+

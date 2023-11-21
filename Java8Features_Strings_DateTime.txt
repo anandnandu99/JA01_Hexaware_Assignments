@@ -1,0 +1,207 @@
+Interfaces:
+-----------
+interface I1 extends I2,I3,I4 {  // multiple inheritance
+
+}
+
+MyInterface mi = new ImplClass(); // Interface reference can hold implementation class obj
+
+Java-7
+
+From Java-8 , interfaces can have method with definition or body.
+Note: Methods should be define either with static or default keyword. 
+
+public interface MyInterface{
+
+	public abstract void m1();
+	
+	public static void  m2(){  // to call use MyInterface.m2();
+		// logics
+	}
+	public default void  m3(){ // to call use implementation class obj  obj.m3();
+		// logics
+	}
+
+
+}
+
+public class   ImpDemo  implements MyInterface{
+
+
+	public void m1(){
+
+		// logic
+	}
+
+	public static void main(String[] ar){
+
+		MyInterfac mi =	new ImpDemo();
+
+			mi.m1();
+
+	}
+
+
+}
+
+
+
+Java-8 Features:
+1. Functional Interface
+2. static and default method
+3. Lambda Expression
+4. Stream API
+5. java.time package
+6. method reference
+
+
+
+
+
+Functional Interface:
+--------------------
+An interface which consist of one and only one abstract method is known as Functional Interface
+Note: It can have static and default methods also.
+
+Lambda Expression:
+Lambda Expressions are implementation to the Functional Interface. It is a short hand expression for implementing functional interfaces.
+
+syn:  ()-> { logics here} or (a,b)->{  logics here }
+
+Note: Every Functional interface implmentation is lambda expression , and every lambda expression return type is Functional interface.
+
+
+Types of  Functional interface and their Lambda Expressions:
+
+1. Consumer Functional Interface
+
+	interface ConsumerFI {
+		void  setData(String name);
+	}
+
+	Lambda Exp:
+		ConsumerFI  consumer = (String name)->{ System.out.println("Welcome "+name);} ;
+
+2. Supplier Functional  Interface
+
+	interface  SupplierFI {
+		int  getData();
+	}
+	Lambda Exp: 		
+		SupplierFI  supplier = ()->{ return intValue;} ;
+
+3. Predicate Functional Interface
+
+
+	interface  PredicateFI {
+		boolean  isValid(String username);
+
+	}
+ Lambda Exp:
+		PredicateFI  predicate = (String username)->{ return booleanValue;} ;
+	
+
+4. Function Functional Interface
+
+	interface   FunctionFI {
+
+		int  findLength(String name,String password);	 // Binary Function FI	
+	
+	}
+
+ Lambda Exp: 
+		FunctionFI   function = (String name)->{ return name.length(); };
+
+
+
+
+
+
+
+
+java.time package:
+==================
+LocalDate class
+
+LocalDateTime class
+
+
+LocalDate.now();
+
+Note: By using LocalDate or LocalDateTime class objects we can call so many getter methods , isXX() , plusXX() ,minusXx() etc 
+Ex: date.getDayOfWeek() , date.isLeapYear() , date.plusMonths(2);
+
+Predefined DateTimeFormats:
+-------------------------
+DateTimeFormatter givenFormat = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
+
+		String formattedDate = date3.format(givenFormat);
+
+		System.out.println(formattedDate);
+
+User defined DateTimeFormats:
+============================
+
+		DateTimeFormatter userFormat = DateTimeFormatter.ofPattern("yyyy =  MM = dd");
+
+		String userFormatDate = date3.format(userFormat);
+
+		System.out.println(userFormatDate);
+
+
+String:
+=======
+String is nothing but sequence of characters.
+Ex: "javeed" , "hello123" , "tiger@87%$"
+
+String objects are Immutable in nature , means which cannot be modify or update.
+
+equals(): String class equals() method compare 2 string values.
+
+Note: In Object class also we have equals() which compares hashcode / references of 2 objects.
+
+StringBuffer and StringBuilder , are mutable in nature.
+Note: StringBuffer is Thread safe but StringBuilder is not thread safe.
+
+
+class Employee{
+
+private String name;
+
+//setters , getters
+
+String toString(){
+
+	return name;
+}
+
+boolean equals(){
+
+//logics
+}
+
+int hashcode(){
+
+//logic
+
+}
+
+}
+
+
+
+
+Employee e1 = new Employee("Javeed");  // 4321
+
+Employee e2 = new Employee("Javeed"); // 9091
+
+
+HashSet hs = new HashSet();
+
+	hs.add(e1);// true
+	hs.add(e2); // false
+
+
+
+
+

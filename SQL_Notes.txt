@@ -1,0 +1,180 @@
+IP-Address:
+Unique Identity given to every machine on a network.
+Ex:  1.127.0.9   , 234.111.99.21
+
+Port No:
+Unique Identity given to every application/software installed in our machines.
+
+Ex: Mysql-3306 ,  Notepad-7643 , Paint-3256 
+
+SQL: 
+---- 
+
+
+Database: 
+Digital Storage System , where data is stored in structural format (Tabular format)
+
+DBMS:
+ex: Mysql , Oracle, H2 , Postgres , MariaDB, MS SQL
+
+
+Data types in Mysql:
+====================
+INT , DECIMAL , BIGINT , DATE , DATETIME, CHAR , VARCHAR
+
+Creating Database:
+Create Database database_name;
+
+Use database_name;
+
+Creating Table:
+
+Create table table_name(column1 datatype,column2 datatype ....);
+
+Example: 
+
+CREATE TABLE `employee_db`.`employee` (
+  `eid` INT NOT NULL,
+  `ename` VARCHAR(45) NULL,
+  `salary` DECIMAL NULL,
+  `comm` DECIMAL NULL,
+  `job` VARCHAR(45) NULL,
+  `doj` DATE NULL,
+  `mid` INT NULL,
+  PRIMARY KEY (`eid`));
+
+
+SQL: Structural Query Lang , common query lang for all type of SQL Databases.
+
+DDL: Data Definition Lang 
+When ever we want to work with table structure then use DDL.
+
+CREATE , ALTER , DROP , TRUNCATE
+
+CREATE- it is used to create table/users/views/stored procedures/triggers or anything in sql.
+
+ALTER - it is used to alter table structure.
+  option: ADD , MODIFY , DROP
+
+	ALTER TABLE Employee  Add(city varchar(20));
+	ALTER TABLE Employee  Modify ename varchar(50);
+	ALTER TABLE Employee DROP Column salary;
+
+DROP -  it is used to drop any existing object (table,user,views,triggers,procedures)
+
+	drop table mytable;
+
+TRUNCATE: it is used to delete all the rows/records from the given table.
+
+
+DML: Data Manipulation Lang , when ever we want to manipulate data or wants to work with data then use        	DML Queries.
+
+INSERT -  INSERT INTO  Employee values(101,'king',50000,null,'President','2020-10-21',null);  
+
+UPDATE - update employee set  comm = null where  eid = 103;
+Ex:
+  update employee set ename = ?,salary =?,comm=?,job=?,doj=?,mid=? where eid = 101;
+
+DELETE : Delete from Employee where eid = 102;
+
+
+DRL/DQL: Data Query Lang 
+SELECT - it is used to select the data / records from table.
+
+
+Where clause known as filter.
+Filters are  = , != , > , < , >= , <= 
+
+
+
+DCL: Data Control Lang
+	Grant,Revoke
+
+TCL: Transaction Control Lang
+
+COMMIT,SAVEPOINT,ROLLBACK
+
+
+Operators:
+comparator operators:  = , !=,>,< 
+
+logical operators:  OR , AND 
+
+LIKE, BETWEEN , IS , NOT 
+
+
+mysql> SELECT * FROM EMPLOYEE  WHERE  salary  >= 25000 and  salary <=40000;
+mysql> SELECT * FROM EMPLOYEE  WHERE  salary  BETWEEN  25000 and 40000;
+
+like operator:
+----------------
+%  -> it means any char , any num of chars
+_   -> it means any char, only one char
+%,_ are pattern matching operators in Like
+
+
+IFNULL():
+it is used to handle null values.
+mysql> select  ename ,  salary +  IFNULL(comm,0)    as total from employee;
+
+
+
+Group Functions / Aggregate Functions:
+======================================
+SUM
+AVG
+
+MIN 
+MAX
+COUNT
+
+Note: All group functions ignore null values during calculation or execution.
+
+Group By clause:
+----------------
+It is used to group the records based on category or type.
+
+
+Having clause:
+it should be used after group by , for comparing group values.
+
+order by: 
+it is used for sorting purpose , it should be used at last in select query.
+
+Note: Use where clause always after table names
+
+mysql> select job, sum(salary) from employee where job = 'Manager' or job = 'Developer'  group by job having sum(salary)> 50000  order by job;
++-----------+-------------+
+| job       | sum(salary) |
++-----------+-------------+
+| Developer |       55000 |
+| Manager   |       67000 |
++-----------+-------------+
+2 rows in set (0.01 sec)
+
+mysql> select job, sum(salary) from employee  group by job having sum(salary)> 50000  order by job;
++-----------+-------------+
+| job       | sum(salary) |
++-----------+-------------+
+| Developer |       55000 |
+| Manager   |       67000 |
++-----------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> select job, sum(salary) from employee  group by job having sum(salary)> 30000  order by job;
++-----------+-------------+
+| job       | sum(salary) |
++-----------+-------------+
+| Developer |       55000 |
+| Manager   |       67000 |
+| President |       50000 |
+| Tester    |       49000 |
++-----------+-------------+
+4 rows in set (0.00 sec)
+
+
+
+
+
+
+

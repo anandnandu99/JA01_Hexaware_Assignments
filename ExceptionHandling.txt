@@ -1,0 +1,46 @@
+
+Exception Handling:
+==================
+
+throws:
+It is used to throws exception from callee method to the caller method. 
+Or it is used to forwarding exception from one place to another
+Note: throws keyword cannot handle exception , it just throws exp to the caller , where your exception should be handle.
+
+try-catch:
+try-catch  blocks are used to handle the exception in java.
+try block will consist risky code / code which raise exceptions.
+catch block is responsible to catch or handle exception thrown by try block.
+
+finally:
+it execute always irrespective of exceptions occur or not.
+we should write some important code which is compulsory to execute in finally block.
+
+throw:
+throw keyword is used to throw any exception explicitly.
+syn:   throw    new ArithmeticException();
+
+
+
+
+
+try-catch
+try-catch-catch-finally
+try-finally
+
+try{
+
+// risky code
+}
+
+finally{
+
+	try{}
+	catch(Exp e){}
+
+
+}
+
+
+
+

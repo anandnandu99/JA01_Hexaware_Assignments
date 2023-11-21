@@ -1,0 +1,51 @@
+Primitive: byte,short,int,long  0 
+		float 0.0f ,double  0.0
+		boolean - false
+		char - single space 
+
+Non-Primitive / Reference Type:  String,Object,System,Employee,Customer, Any class/interfac
+		default value - null.
+
+
+In Java 3 types of variables:
+
+1. Local variables
+2. Instance variables
+3. Static variables
+
+Note: Above 3 types of variables can be declare using primitive datatypes(int,float,long,doubl,boolean) or by using reference types also(Object,String,Employee,Customer,Wrapper classes, any class type)
+
+
+Local Variables:
+----------------
+Variable declare inside any java blocks or declare as parameters known as local variables.
+Example of blocks methods,construtors,if,for,while,switch case,try-catch-finally ...
+Note: Local variables values should be initialize by user , it cannot be initialize by JVM.
+
+
+
+Instance Variables:
+Variables declar inside the class without static keyword is known as instance variables or
+ Object level variables
+Note: Instance variable default values can be initialize by jvm.
+Instance variables can be access by using this keyword or by using that class object.
+Every object will have its own copy of instance variables. if we modify value in one object , will not effect other object values.
+
+
+Static variables:
+Variable declare inside the class with static keyword is known as static variables .
+ They also known as Class Level variables.
+Jvm initialize default values to the static variables.
+
+In Java for every object same copy of static variables will be assign  unlike instance variables.
+If you modify static value of one object it will effect all object values.
+
+Static members can be accessible by using object ref or by using class name.
+
+
+
+
+
+
+
+

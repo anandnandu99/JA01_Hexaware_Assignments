@@ -1,0 +1,94 @@
+Inheritance:
+One class inherite properties from another class is known as Inheritance OR IS-A Relationship.
+Using extends keyword we can inheritanc properties of one class into another.
+Note: One Interface can extend properties of another interface.
+
+One class can extend exactly one and only one parent class
+(multiple inheritance is not possible for class)
+
+class A  extends B{
+
+}
+
+
+One Interface can extend multiple interfaces 
+(multiple inheritance is possible for interfaces.)
+
+interface I1  extends I2,I3 {
+
+}
+
+For classes and interfaces multi-level inheritance is possible.
+
+Object
+  |
+Parent
+  |
+Child
+
+
+
+
+
+Polymorphism:
+
+Poly- Many
+Morphism - Forms
+
+Example: One person play  different role like Employee,Son,Customer,Friend is nothing but polymorphism
+
+2 types of Polymorphism:
+===========================
+1. Static/Compile time polymorphism
+
+Ex: Overloading , method overloading, constructor overloading, operator overloading.
+
+
+2. Dynamic/Runtime polymorphism
+Ex:  Method Overriding
+Ex: Super class reference variable holding sub-class object is also known as Runtime polymorphism
+
+Encapsulation:
+Binding data and data members into a single unit/cell is known as encapsulation.
+its nothing but hiding data or logics in single unit.
+Ex: Object hiding data , Method hiding logics , Class hiding code
+
+Abstraction:
+
+Highlighting set of services to the users and hiding implementation code is known as Abstraction.
+
+Abstraction can be implemented by using Interfaces and Abstract class/ Implementation class
+
+
+Inteface:
+For User/Client : Interface is set of services which user may use.
+
+For Developers: Interface is set of services which we implements.
+
+BankApplication:
+
+Interface:
+   withdraw();
+    deposit();
+
+
+InterfaceVar  i = new ImpClassObj();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

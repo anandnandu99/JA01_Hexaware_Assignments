@@ -1,0 +1,122 @@
+Collections API / Collection Framwork
+java.util package
+
+Collection(I)
+ | - List(I)
+	 |- ArrayList , LinkedList, Vector
+
+ | - Set(I)
+	| - HashSet->LinkedHashSet   , TreeSet
+ 
+
+
+
+List:
+Common Features: 
+-> Duplicate is allowed
+-> Null values allowed
+-> Insertion order is preserved
+-> Homo , Hetro elements
+
+Unique Features of each List family member
+ArrayList :
+-> It Use Resizable Array DS
+-> It is good for fast fetching data / retrieve data frequently
+Note: ArrayList implements one extra interface known as RandomAccess interface (marker interface)
+interface RandonAccess{  // marker interface
+
+}
+
+LinkedList:
+->It use Doubly linked list DS
+->It is good for inserting and deleting 
+
+Vector:
+-> it is same as ArrayList 
+-> it is Legacy class 
+-> all legacy classes are synchronize/Thread safe in nature
+
+Set:
+====
+-> Set does not allow duplicates
+-> Insertion order is not preserved , it is different for all Set classes
+-> Null is allowed
+
+HashSet 
+-> It use Hash table DS
+-> It insert elements based on hashcode of objects/elements
+
+LinkedHashSet:
+-> It is a child of HashSet class
+-> It uses Hash table + doubly linked list
+  LinkedHashSet  =   ( LinkedList + HashSet) 
+
+TreeSet:
+ -> It uses B-Tree DS
+ -> It allows only homogenous elements
+ -> TreeSet insert elements in natural order 
+Note: TreeSet and TreeMap  allows or sort only those objects whose class implements Comparable interface.
+
+String classes and all Wrapper classes (Integer,Float,Long,Double ....)
+implements Comparable interface.
+
+java.lang;
+
+interface Comparable {
+
+public abstract int compareTo(obj1,obj2);
+
+}
+
+public class String/Integer/Long/Float  implements Comparable {
+
+	int compareTo(obj1,obj2){
+
+		// logics	
+	}
+
+
+}
+===================================================================
+
+java.lang
+Comparable interface
+ compareTo();
+
+java.util
+Comparator interface
+  compare();
+
+
+Note: Comparable interface should be added to that class whose objects are getting added to TreeSet or TreeMap so its not good option for Predefined classes.
+Note: Comparator interface can be implemented by seperate class , and its a best option for Predefined and also for User defined classes.
+
+
+==============================================================================
+
+Map:
+Its a combination of List+Set  families , its not a child of Collection interface.
+Map stored elements in key,value pairs.
+Ex: Map<k,v>
+Note: Key column uses Set family features , and Value column uses List family features
+We Cannot duplicate keys but we can duplicate values.
+Sorting or insertion take place based on keys.
+
+Map(I)
+ | - HashMap -> LinkedHashMap
+ | - TreeMap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

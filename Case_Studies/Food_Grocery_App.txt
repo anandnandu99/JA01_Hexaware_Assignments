@@ -1,0 +1,25 @@
+
+Food delivery app
+
+User
+1.admin
+
+restaurant and menu items CRUD Operations
+
+2.customers
+
+cart and customer entities CRUD OPeration
+
+
+
+Grocery delivery app
+
+User
+1.admin
+
+products/items CRUD Operations
+
+2.customers
+
+cart and customer entities CRUD OPeration
+

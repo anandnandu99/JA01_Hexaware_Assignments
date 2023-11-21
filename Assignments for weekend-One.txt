@@ -1,0 +1,42 @@
+Assignments for weekend-1
+
+SQL:
+====
+Revise and Practice 
+DML - INSERT , UPDATE , DELETE Queries
+DRL - SELECT
+-> string functions, datetime functions
+-> group functions
+-> Operator  for example : between , is , not , like ....
+-> Joins -  Cross Join/Inner Join  , outer join 
+-> Sub queries 
+-> DDL - CREATE , ALTER ** , DROP
+
+PL/SQL:
+1.Procedure ***
+2.Triggers
+3.Views
+4.Cursors
+IF , Loop , While , Case ....
+
+===============================
+
+Softwares : Java 11 jdk or 11+ jdk , STS IDE (Web Developer)
+
+Core Java:
+Data types , Types of Variable (local,instance,static)
+OOPs : Object , Class ,Interface,Abstract class, (Polymorphism) Overloading and Overriding , Inheritance , Encapsulation, Abstraction.
+Reading Data from Keyboard using Scanner or BufferedReader
+Wrapper classes.
+Strings and Arrays
+
+Exception Handling Basics
+Collectins , ArrayList , HashSet, TreeSet , HashMap
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+
+Weekend-2:
+
+Basic Fundamentals
+OOPs
+Pojo class
+Collections - ArrayList , HashSet,TreeSet , HashMap , TreeMap , Iterator
+		Comparator using any Entity
+String,StringBuffer and Arrays
+Exception Handling 
+FileReader
+JDBC - CRUD Operations with prepared statement
+java.time package
+Lambda Expressions
+
+
+Multi Threading
+synchornization 
+
+
+Stream Api in Java-8
+Java-11 new features
+String class 
+Future Type
+Callable 
+
+
+==============================================
+
+
+Project case studies:
+->Analyse Module in project
+-> In each module how many services/functionalities
+
+Database analyse and  implemenation for given case studies.
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+Database:
+Database stores data permanently in tabular format. 
+Table will have rows and columns.
+
+DBMS: Database software , which is use to manage data.
+
+Databases: MYSQL DB , Oracle DB, H2 DB, Postgres DB , SqlServer DB
+
+MYSQL:
+-----
+
+
+CRUD Operation:
+
+C - Create (inserting record/data) : INSERT
+R - Retrieve (fetching data)    : SELECT
+U - Update (modifying data)     : UPDATE
+D - Delete (delete/remove data)  : DELETE
+
+Data types: integer , decimal ,double, bigint , boolean , date , char , varchar
+
+1. create new database.
+-> CREATE DATABASE DB_NAME;
+-> use DB_NAME;
+
+
+use vodafone;
+
+CREATE TABLE Employee(eid integer(3) , ename varchar(20) , salary double);
+
+INSERT INTO Employee values(101,'king',50000);
+
+UPDATE Employee set ename ='king khan' , salary = 99000 where eid = 101;
+
+SELECT * FROM Employee ;
+SELECT * FROM Employee where salary > 30000;
+
+SELECT * FROM Employee where eid = 101;
+
+DELETE FROM Employee where eid = 101;
+
+JDBC :
+========
+Java Data Base Connectivity.
+
+java.sql.*;  (jdbc api)
+
+Interfaces:
+-----------
+Driver 
+Connection
+Statement
+PreparedStatement
+ResultSet
+
+Classes:
+--------
+DriverManager
+Date
+
+
+
+JDBC Steps:(download and add jar file only once)
+-----------
+1. Register Driver class with DriverManager
+	 DriverManager.registerDriver(driver  class obj); or
+          Class.forName(driver class name);
+2. Get the connection
+3. Create Statement 
+	i. Statement : it is used for static query
+	ii. PreparedStatement: it is used for dynamic query
+4. Write sql query and 
+
+5.execute by calling methods
+	SELECT Query : any select query  --> executeQuery();  return   ResultSet
+	Non-SELECT Query  : insert,update,delete (DML)   ---> executeUpdate(); return integer
+6.close DB connection
+
+
+
+CRUD OPERATIONS:
+ 
+Logically  INSERT and UPDATE are same
+Logically   DELETE ONE  and SELECT ONE are same
+
+SELECT ALL is different
+
+
+
+
+Design Patterns:
+----------------
+Design patterns are the solutions to the commonly, repeated occuring problems in programming or softwares.
+
+Factory Design Pattern
+Singleton Design Pattern
+Prototype Design Pattern
+
+
+
+
+
+
+
+

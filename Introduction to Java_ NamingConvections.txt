@@ -1,0 +1,103 @@
+Introduction to Java:
+--------------------
+Its a  High Level Programming.
+Ex: c , c++ , java , c#
+
+It is an Object Oriented Programming Lang.
+Ex: C++ , java
+
+functional programming lang like C-lang
+
+displayEmployeeData(){
+
+ return '101  javeed  4000';
+}
+
+-------------------
+Employee  e1 = new Employee(101,'javeed',4000);
+
+
+Java categories into 3 types
+1. JSE - Java Standard Edition (core java)
+2. JEE - Java Enterprise Edition (advance java)
+3. JME - Java Mobile/Micro Editon or  Andriod
+
+Using JSE/Core Java we can development standalone/desktop application.
+Ex: Notepad, Paint, MS Office, Browser , Eclipse , mysql , O.S
+
+Using JEE/Adv Java we can development Web Application/Enterprise Applicatin.
+Ex: University, Government , Apolo Medical (web apps)
+Ex: Google,Facebook , Amazon , Flipkart (enterpise apps)
+
+Java is a Specification API - Application Programming Interface
+
+String class.
+concat();
+indexOf();
+length()
+toLowerCase();
+toUpperCase()
+  
+
+java.util.*;
+
+ArrayList
+binarySearch();
+
+java.io.*;
+	FileReader  class
+		read();
+
+JDBC api
+
+
+===========================
+
+Naming Convections / Rules for writing names.
+
+
+package:
+  lower cases
+ex: java.lang , java.util , java.io , java.jwt 
+
+syn:-   domain.company.project.module.submodule;
+   ex:    com.hexaware.ecommerce.login.user
+
+
+Class/Interface:
+InitCap 
+Ex:   Object  , String , StringBuffer , Scanner, System , Date, Integer
+Ex:  Student , Employee , DeptInfo , BankAccount
+
+Constructor:  Same as class name.
+InitCap
+Object  --> Object();
+String  --> String();
+Employee  --> Employee();
+
+variables/methods:
+
+camel-case
+
+Ex:  account , accountNumber , studentMarks , bankBalance
+Ex:  get() , getData() , setData() , getEmloyeeDetails();
+
+final variables:
+UPPER CASE
+ex:  IFSC , PI_VALUE , TOKEN_NUMBER
+
+Special characters allowed are _ and $.
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

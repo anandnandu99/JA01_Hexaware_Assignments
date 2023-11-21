@@ -1,0 +1,121 @@
+
+Cursors:
+---------
+Cursors are used to handle bulk of records / data fetch from the select queries.
+Cursors can be used in procedures or functions to process bulk of records/rows.
+
+1. Implicit
+It is generated/created by system , and used internally to fetch data. 
+2. Explicit
+It is created by user/developer and used in stored procedures to handle data fetch from select queries which return multiple records/rows.
+
+
+You can use MySQL cursors in stored procedures, stored functions, and triggers.
+
+Working with MySQL cursor
+First, declare a cursor by using the DECLARE statement:
+
+DECLARE cursor_name CURSOR FOR SELECT_statement;
+Code language: SQL (Structured Query Language) (sql)
+The cursor declaration must be after any variable declaration. If you declare a cursor before the variable declarations, MySQL will issue an error. A cursor must always associate with a SELECT statement.
+
+Next, open the cursor by using the OPEN statement. The OPEN statement initializes the result set for the cursor, therefore, you must call the OPEN statement before fetching rows from the result set.
+
+OPEN cursor_name;
+Code language: SQL (Structured Query Language) (sql)
+Then, use the FETCH statement to retrieve the next row pointed by the cursor and move the cursor to the next row in the result set.
+
+FETCH cursor_name INTO variables list;
+Code language: SQL (Structured Query Language) (sql)
+After that, check if there is any row available before fetching it.
+
+Finally, deactivate the cursor and release the memory associated with it  using the CLOSE statement:
+
+CLOSE cursor_name;
+Code language: SQL (Structured Query Language) (sql)
+It is a good practice to always close a cursor when it is no longer used.
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE `Cursor_loop`()
+BEGIN
+
+DECLARE finished INTEGER DEFAULT 0;
+DECLARE job_name varchar(100) DEFAULT  '';
+DECLARE jobList  varchar(100) default '';
+
+DECLARE  emp_cursor
+      CURSOR FOR
+        SELECT distinct job from employee where job IN('Manager','Developer','Tester');
+
+	DECLARE CONTINUE HANDLER 
+        FOR NOT FOUND SET finished = 1;
+	OPEN emp_cursor;
+    
+		getJobs: LOOP
+		FETCH emp_cursor INTO job_name;
+		IF finished = 1 THEN 
+			LEAVE getJobs;
+		END IF;
+		-- build email list
+		SET jobList = CONCAT(job_name,";",jobList);
+	END LOOP getJobs;
+  CLOSE emp_cursor;
+	
+    select jobList;
+END
+
+=============================
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Cursor_Demo`()
+BEGIN
+
+	DECLARE job_name  VARCHAR(50) default '';
+    DECLARE COUNT  INT default 0;
+    DECLARE   list  varchar(250) default '';
+    
+	DECLARE cursor1 CURSOR FOR   select  JOB from employee;
+
+	OPEN cursor1;
+
+	WHILE  count < 10 DO
+    FETCH cursor1 INTO job_name;
+
+		IF  job_name = 'Developer' OR job_name = 'Tester' THEN
+			
+				select job_name;
+		END IF;
+    set count = count +1;
+    
+	
+    
+	END WHILE;
+    close cursor1; 
+    
+    
+ 
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+Day-1:
+
+Practice 
+DML queries
+
+DRL: select  
+where , single value functions , operators
+Group functions , group by , having , order by
+
+Joins and Subqueries
