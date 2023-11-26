@@ -1,0 +1,24 @@
+<h1>Reactive Forms in Angular </h1>
+<div  class="container col-md-4">
+
+<form  [formGroup]="registerFormGroup"  (ngSubmit)="onSubmit()">
+
+<div class="form-control"><label>First Name: </label>
+    <input type="text"   formControlName="firstName"   class="form-control" 
+     [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" >
+
+    <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+    <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
+    </div>
+</div>
+
+
+
+
+
+<div class="form-group"> <button   class="btn btn-primary">Register</button>
+</div>
+
+</form>
+
+</div>

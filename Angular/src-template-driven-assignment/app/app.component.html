@@ -1,0 +1,71 @@
+<div  style="background-color: blue;">
+  <div class="container col-xl-6">
+  <form class="form-control" #moviedata="ngForm" (ngSubmit)="readMovieData(moviedata)">
+
+    <div>
+    <label for="moviename">Movie Name</label>
+    <input type="text" class="form-control" name="movie" required #movieName="ngModel" ngModel >
+    <span style="color: red;" *ngIf="movieName.touched&& movieName.invalid">Movie Name is required</span>
+  </div>
+  <div class="form-group">
+    <label for="director">Director</label>
+    <input type="text" class="form-control" name="director" required #director="ngModel" ngModel>
+    <span style="color: red;" *ngIf="director.touched && director.invalid">Director is required</span>
+  </div>
+  
+  <div class="form-group">
+    <label for="genre">Genre</label>
+    <input type="text" class="form-control" name="genre" required #genre="ngModel" ngModel>
+    <span style="color: red;" *ngIf="genre.touched && genre.invalid">Genre is required</span>
+  </div>
+  
+  <div class="form-group">
+    <label for="rating">Rating</label>
+    <input type="number" class="form-control" name="rating" required #rating="ngModel" ngModel>
+    <span style="color: red;" *ngIf="rating.touched && rating.invalid">Rating is required</span>
+  </div>
+  <div class="form-group">
+    <label for="language">Language</label>
+    <select class="form-control" name="language" required #language="ngModel" ngModel>
+      <option value="" disabled>Select a language</option>
+      <option value="Telugu">Telugu</option>
+      <option value="Tamil">Tamil</option>
+      <option value="Hindi">Hindi</option>
+    </select>
+    <span style="color: red;" *ngIf="language.touched && language.invalid">Language is required</span>
+  </div>
+  
+  <div class="form-group">
+    <label for="censorRating">Censor Rating:</label>
+    <label><input type="radio" name="censorRating" value="U" required #censorRatingU="ngModel" ngModel> U  </label>
+    <label><input type="radio" name="censorRating" value="U/A" required #censorRatingUA="ngModel" ngModel> U/A  </label>
+    <label><input type="radio" name="censorRating" value="A" required #censorRatingA="ngModel" ngModel> A  </label>
+    <span style="color: red;" *ngIf="(censorRatingU.touched || censorRatingUA.touched || censorRatingA.touched) && (censorRatingU.invalid || censorRatingUA.invalid || censorRatingA.invalid)">
+    </span></div>
+
+  
+
+
+    
+  <div class="form-group">
+<label>ShowTimes:</label><br>
+  <label><input  type="checkbox" name="morningshow" required #showtimeMo ="ngModel" ngModel >Morning Show   </label>
+  <label> <input type="checkbox" name="matnieeshow"required #showtimeMa ="ngModel" ngModel> Matinee</label>
+  <label><input type="checkbox" name="firstshow" required #showtimeF ="ngModel" ngModel>First Show</label>
+  <label><input type="checkbox" name="secondshow" required #showtimeS="ngModel" ngModel>Second Show</label>
+
+</div>
+
+<div class="form-group">
+  <label for="description">Description</label>
+  <textarea class="form-control" name="description" rows="4" #description="ngModel" ngModel></textarea>
+  <span style="color: red;" *ngIf="description.touched && description.invalid">Description is required</span>
+</div>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="moviedata.invalid">Submit</button>
+
+
+  </form>
+</div>
+</div>
