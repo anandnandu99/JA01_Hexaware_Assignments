@@ -1,0 +1,47 @@
+<!-- theatres.component.html -->
+<div>
+    <div class="container col-md-5" >
+        <h2>Theatres</h2>
+
+      <table class="table table-success table-bordered">
+
+        <thead>
+          <tr>
+            <th>Theatre Name</th>
+            <th>Location</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let theatre of theatres; let i = index">
+            <td>{{ theatre.theatreName }}</td>
+            <td>{{ theatre.location }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="removeTheatre(i)">Remove</button>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Add Theatre Form -->
+    <div class="container col-md-5" *ngIf="!showAddTheatreForm">
+      <button class="btn btn-primary" (click)="toggleAddTheatreForm()">Add Theatre</button>
+    </div>
+    <div *ngIf="showAddTheatreForm">
+      <form class="container col-md-5" (ngSubmit)="addTheatre()" #theatreForm="ngForm">
+        <div class="form-group">
+            <h2>Add Theatre Details</h2>
+          <label for="theatreName">Theatre Name:</label>
+          <input type="text" id="theatreName" [(ngModel)]="newTheatre.theatreName" name="theatreName" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" [(ngModel)]="newTheatre.location" name="location" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-success">Add Theatre</button>
+      </form>
+    </div>
+  </div>
+  

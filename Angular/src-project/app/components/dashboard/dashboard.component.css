@@ -1,0 +1,6 @@
+/* Add this to your styles.css or component-specific styles */
+.navbar-nav .nav-item.active {
+    background-color: #2c79ca; /* Highlight color for active link */
+    color: #fff; /* Text color for active link */
+  }
+  

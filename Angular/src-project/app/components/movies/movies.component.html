@@ -1,0 +1,75 @@
+<!-- movies.component.html -->
+<div>
+  <div class="container col-md-10">
+    <h2>Movies Now Playing</h2>
+
+    <table class="table table-success table-bordered">
+      <thead>
+        <tr>
+          <th>Poster</th>
+          <th>Title</th>
+          <th>Language</th>
+          <th>Director</th>
+          <th>Genre</th>
+          <th>Rating</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies; let i = index">
+          <td>
+            <img src="{{ movie.imageUrl }}" alt="{{ movie.title }}" class="movie-image" />
+          </td>
+          <td>{{ movie.title }}</td>
+          <td>{{ movie.language }}</td>
+          <td>{{ movie.director }}</td>
+          <td>{{ movie.genre }}</td>
+          <td>{{ movie.rating }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="removeMovie(i)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container">
+    <!-- Add Movie Form Toggle Button -->
+    <div *ngIf="!showAddMovieForm">
+      <button class="btn btn-primary" (click)="toggleAddMovieForm()">Add Movie</button>
+    </div>
+
+    <!-- Add Movie Form -->
+    <div *ngIf="showAddMovieForm">
+      <form class="container col-md-5" (ngSubmit)="addMovie()" #movieForm="ngForm">
+        
+        <div class="form-group">
+          <h1>Add Movie Details</h1>
+          <label for="newTitle">Title:</label>
+          <input type="text" id="newTitle" [(ngModel)]="newMovie.title" name="newTitle" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="newDirector">Director:</label>
+          <input type="text" id="newDirector" [(ngModel)]="newMovie.director" name="newDirector" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="newGenre">Genre:</label>
+          <input type="text" id="newGenre" [(ngModel)]="newMovie.genre" name="newGenre" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="newLanguage">Language:</label>
+          <input type="text" id="newLanguage" [(ngModel)]="newMovie.language" name="newLanguage" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="newRating">Rating:</label>
+          <input type="number" id="newRating" [(ngModel)]="newMovie.rating" name="newRating" class="form-control" required placeholder=""/>
+        </div>
+        <div class="form-group">
+          <label for="newImageUrl">Poster URL:</label>
+          <input type="text" id="newImageUrl" [(ngModel)]="newMovie.imageUrl" name="newImageUrl" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-success">Add</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+/* seating.component.css */
+.row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .seat {
+    margin: 5px;
+    cursor: pointer;
+    font-size: 24px; /* Adjust font size as needed */
+  }
+  
+  .selected {
+    color: red;
+  }
+  
