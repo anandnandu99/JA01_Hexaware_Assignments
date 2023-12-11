@@ -1,0 +1,86 @@
+
+<div >
+    <div >
+
+        
+        <form class="container col-md-5" #playerForm="ngForm" (ngSubmit)="addPlayer(playerForm)">
+          
+            <h2>Enter Player Details</h2>
+            <div >
+            <label for="playerName">Player Name:</label>
+            <br><input type="text" id="playerName" name="playerName" [(ngModel)]="newPlayer.playerName" required>
+          </div>
+      
+          <div>
+            <label for="jerseyNumber">Jersey Number:</label>
+            <br><input type="number" id="jerseyNumber" name="jerseyNumber" [(ngModel)]="newPlayer.jerseyNumber" required>
+          </div>
+      
+          <div>
+            <label for="role">Role:</label>
+            <br> <input type="text" id="role" name="role" [(ngModel)]="newPlayer.role" required>
+          </div>
+      
+          <div>
+            <label for="totalMatches">Total Matches:</label>
+            <br> <input type="number" id="totalMatches" name="totalMatches" [(ngModel)]="newPlayer.totalMatches" required>
+          </div>
+      
+          <div>
+            <label for="teamName">Team Name:</label>
+            <br> <input type="text" id="teamName" name="teamName" [(ngModel)]="newPlayer.teamName" required>
+          </div>
+      
+          <div>
+            <label for="country">Country:</label><br>
+            <input type="text" id="country" name="country" [(ngModel)]="newPlayer.country" required>
+          </div>
+      
+          <div>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" [(ngModel)]="newPlayer.description"></textarea>
+          </div>
+          <br>
+      
+          <button type="submit" [disabled]="playerForm.invalid">Add Player</button>
+        </form>
+      </div>
+      
+</div>
+<br>
+<div class="container col-md-10 ">
+    <h2>Players</h2>
+
+    <table class="table table-success table-bordered ">
+
+        <tr>
+            <th>Player Name</th>
+            <th>Jersey Number</th>
+            <th>Role</th>
+            <th>Total Matches</th>
+            <th>Team Name</th>
+            <th>Country</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let player of players">
+            <td>{{ player.playerName }}</td>
+            <td>{{ player.jerseyNumber }}</td>
+            <td>{{ player.role }}</td>
+            <td>{{ player.totalMatches }}</td>
+            <td>{{ player.teamName }}</td>
+            <td>{{ player.country }}</td>
+            <td>{{ player.description }}</td>
+            <td>
+                <button (click)="removePlayer(player.playerName)">Remove</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<h2>Indian Players</h2>
+<tr *ngFor="let player of players">
+
+    <div *ngIf="player.country ==='India'">
+    <td >{{ player.playerName }}</td>
+</div>
+  
